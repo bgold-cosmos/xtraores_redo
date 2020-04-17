@@ -1,0 +1,7 @@
+cc-by-sa 3.0
+
+Original xtraores by davidthecreator:
+https://github.com/daviddoesminetest/Xtraores-
+
+Refactored by bgold
+https://github.com/bgold-cosmos/xtraores_redo
