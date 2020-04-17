@@ -1,84 +1,35 @@
 
 
 -----------------------bars--------------
+local bar_levels = {
+	Nickel    = 1,
+	Platinum  = 2,
+	Palladium = 3,
+	Cobalt    = 4,
+	Thorium 	= 5,
+	Osmium	  = 6,
+	Rhenium 	= 7,
+	Vanadium  = 8,
+	Rarium    = 9,
+	Orichalcum= 10,
+	Titanium  = 11,
+	Uranium   = 11,
+	Chromium  = 12,
+}
 
-minetest.register_craftitem('xtraores_redo:nickel_bar', {
-		description = "".. core.colorize("#68fff6", "Nickel bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 1"),
-	inventory_image = "xtraores_redo_nickel_bar.png",
-	stack_max= 999,
-})
+local function register_xtrabar(name, level)
+	local lcname = string.lower(name)
+	minetest.register_craftitem('xtraores_redo:'.. lcname .. '_bar', {
+		description = "".. core.colorize("#68fff6", name .. " bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: " .. level),
+		inventory_image = "xtraores_redo_" .. lcname .. "_bar.png",
+		stack_max= 999,
+	})
+end
 
-minetest.register_craftitem('xtraores_redo:platinum_bar', {
-		description = "".. core.colorize("#68fff6", "Platinum bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 2"),
-	inventory_image = "xtraores_redo_platinum_bar.png",
-	stack_max= 999,
-})
+for k,v in pairs(bar_levels) do
+	register_xtrabar(k, v)
+end
 
-minetest.register_craftitem('xtraores_redo:palladium_bar', {
-		description = "".. core.colorize("#68fff6", "palladium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 3"),
-	inventory_image = "xtraores_redo_palladium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:cobalt_bar', {
-		description = "".. core.colorize("#68fff6", "Cobalt bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 4"),
-	inventory_image = "xtraores_redo_cobalt_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:thorium_bar', {
-		description = "".. core.colorize("#68fff6", "Thorium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 5"),
-	inventory_image = "xtraores_redo_thorium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:osmium_bar', {
-		description = "".. core.colorize("#68fff6", "Osmium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 6"),
-	inventory_image = "xtraores_redo_osmium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:rhenium_bar', {
-		description = "".. core.colorize("#68fff6", "Rhenium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 7"),
-	inventory_image = "xtraores_redo_rhenium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:vanadium_bar', {
-		description = "".. core.colorize("#68fff6", "Vanadium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 8"),
-	inventory_image = "xtraores_redo_vanadium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:rarium_bar', {
-		description = "".. core.colorize("#68fff6", "Rarium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 9"),
-	inventory_image = "xtraores_redo_rarium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:orichalcum_bar', {
-		description = "".. core.colorize("#68fff6", "Orichalcum bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 10"),
-	inventory_image = "xtraores_redo_orichalcum_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:titanium_bar', {
-		description = "".. core.colorize("#68fff6", "Titanium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_titanium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:uranium_bar', {
-		description = "".. core.colorize("#68fff6", "Uranium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_uranium_bar.png",
-	stack_max= 999,
-})
-
-minetest.register_craftitem('xtraores_redo:chromium_bar', {
-		description = "".. core.colorize("#68fff6", "Chromium bar\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 12"),
-	inventory_image = "xtraores_redo_chromium_bar.png",
-	stack_max= 999,
-})
 
 --------------------handles-------------
 
