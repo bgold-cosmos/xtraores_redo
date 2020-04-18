@@ -1,20 +1,20 @@
 local ore_table = {
-	{name = "Nickel",    level=1,  clustering = {{scarcity=16, y_max=100}, {scarcity=9,y_max=-1}}, cooktime=2},
-	{name = "Platinum",  level=2,  clustering = {{scarcity=12, y_max=-85}},   cooktime=5},
-	{name = "Palladium", level=3,  clustering = {{scarcity=15, y_max=-250}},  cooktime=12},
-	{name = "Cobalt",    level=4,  clustering = {{scarcity=17, y_max=-600}},  cooktime=20},
-	{name = "Thorium",   level=5,  clustering = {{scarcity=19, y_max=-1250}}, cooktime=32, end_on_blast=true},
+	{name = "Nickel",    level=1,  clustering = {{scarcity=16, y_max=100}, {scarcity=10,y_max=-64}}, cooktime=2},
+	{name = "Platinum",  level=2,  clustering = {{scarcity=14, y_max=-250}},   cooktime=5},
+	{name = "Palladium", level=3,  clustering = {{scarcity=16, y_max=-750}},  cooktime=12},
+	{name = "Cobalt",    level=4,  clustering = {{scarcity=18, y_max=-1000}},  cooktime=20},
+	{name = "Thorium",   level=5,  clustering = {{scarcity=19, y_max=-1750}}, cooktime=32, end_on_blast=true},
 	-- antracite is more like coal, handled separately
 	{name = "Osmium",    level=6,  clustering = {{scarcity=21, y_max=-3500}}, cooktime=45, end_on_blast=true},
 	{name = "Rhenium",   level=7,  clustering = {{scarcity=23, y_max=-5750}}, cooktime=60, end_on_blast=true},
-	{name = "Vanadium",  level=8,  clustering = {{scarcity=26, y_max=-8000}}, cooktime=75, end_on_blast=true},
+	{name = "Vanadium",  level=8,  clustering = {{scarcity=25, y_max=-8000}}, cooktime=75, end_on_blast=true},
 	-- rarium is glowy and animated,
-	{name = "Rarium",    level=9,  clustering = {{scarcity=30, y_max=-10000, num_ores=3, size=3}}, cooktime=90,  end_on_blast=true, animated=true, light=4},
-	{name = "Orichalcum",level=10, clustering = {{scarcity=34, y_max=-12500, num_ores=3, size=3}}, cooktime=120, end_on_blast=true},
-	{name = "Titanium",  level=11, clustering = {{scarcity=36, y_max=-15000, num_ores=3, size=3}}, cooktime=145, end_on_blast=true},
+	{name = "Rarium",    level=9,  clustering = {{scarcity=27, y_max=-10000, num_ores=3, size=3}}, cooktime=90,  end_on_blast=true, animated=true, light=4},
+	{name = "Orichalcum",level=10, clustering = {{scarcity=28, y_max=-12500, num_ores=3, size=3}}, cooktime=120, end_on_blast=true},
+	{name = "Titanium",  level=11, clustering = {{scarcity=29, y_max=-15000, num_ores=3, size=3}}, cooktime=145, end_on_blast=true},
 	-- uranium is glowy and animated
-	{name = "Uranium",   level=11, clustering = {{scarcity=37, y_max=-15000, num_ores=2, size=3}}, cooktime=145, end_on_blast=true, animated=true, light=7},
-	{name = "Chromium",  level=12, clustering = {{scarcity=38, y_max=-18000, num_ores=3, size=3}}, cooktime=180, end_on_blast=true},
+	{name = "Uranium",   level=11, clustering = {{scarcity=30, y_max=-15000, num_ores=2, size=3}}, cooktime=145, end_on_blast=true, animated=true, light=7},
+	{name = "Chromium",  level=12, clustering = {{scarcity=31, y_max=-18000, num_ores=3, size=3}}, cooktime=180, end_on_blast=true},
 }
 
 local function register_xtraore(m)
