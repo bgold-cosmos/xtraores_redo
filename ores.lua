@@ -2,8 +2,8 @@ local ore_table = {
 	{name = "Nickel",    level=1,  clustering = {{scarcity=16, y_max=100}, {scarcity=10,y_max=-64}}, cooktime=2},
 	{name = "Platinum",  level=2,  clustering = {{scarcity=14, y_max=-250}},   cooktime=5},
 	{name = "Palladium", level=3,  clustering = {{scarcity=16, y_max=-750}},  cooktime=12},
-	{name = "Cobalt",    level=4,  clustering = {{scarcity=18, y_max=-1000}},  cooktime=20},
-	{name = "Thorium",   level=5,  clustering = {{scarcity=19, y_max=-1750}}, cooktime=32, end_on_blast=true},
+	{name = "Cobalt",    level=4,  clustering = {{scarcity=18, y_max=-1200}},  cooktime=20},
+	{name = "Thorium",   level=5,  clustering = {{scarcity=19, y_max=-1900}}, cooktime=32, end_on_blast=true},
 	-- antracite is more like coal, handled separately
 	{name = "Osmium",    level=6,  clustering = {{scarcity=21, y_max=-3500}}, cooktime=45, end_on_blast=true},
 	{name = "Rhenium",   level=7,  clustering = {{scarcity=23, y_max=-5750}}, cooktime=60, end_on_blast=true},
