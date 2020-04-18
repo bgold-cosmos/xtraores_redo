@@ -3,9 +3,9 @@ if minetest.get_modpath("3d_armor") then
 
 	local armor_table = {
 		{name = "Nickel",    level=1,  protection=12, heal=0,  use=1200, speed=-0.01, gravity=0.01, jump=0.0},
-		{name = "Platinum",  level=2,  protection=17, heal=7,  use=200,  speed= 0.0,  gravity=0.0,  jump=0.0},
-		{name = "Palladium", level=3,  protection=20, heal=12, use=150,  speed= 0.03, gravity=0.0,  jump=0.0},
-		{name = "Cobalt",    level=4,  protection=20.2, heal=12.1, use=100,  speed= 0.07, gravity=0.0,  jump=0.0},
+		{name = "Platinum",  level=2,  protection=15, heal=6,  use=300,  speed=-0.01, gravity=-0.01,  jump=-0.01},
+		{name = "Palladium", level=3,  protection=17, heal=9,  use=250,  speed=-0.01, gravity=0.0,  jump=0.0},
+		{name = "Cobalt",    level=4,  protection=20, heal=12, use=120,  speed=-0.01, gravity=-0.02,  jump=0.0},
 		{name = "Thorium",   level=5,  protection=20.4, heal=12.2, use=100,  speed= 0.11, gravity=0.0,  jump=0.03},
 		{name = "Osmium",    level=6,  protection=20.6, heal=12.3, use= 60,  speed= 0.16, gravity=0.0,  jump=0.05},
 		{name = "Rhenium",   level=7,  protection=20.8, heal=12.4, use= 40,  speed= 0.21, gravity=-0.01,  jump=0.08},

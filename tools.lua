@@ -1,23 +1,23 @@
 local common_table = {
 	Nickel    = {level=1,  range=4.0, interval=1.00, uses=15,  maxlevel=2, handle='group:stick'},
-	Platinum  = {level=2,  range=4.2, interval=0.88, uses=20,  maxlevel=3, handle='group:stick'},
-	Palladium = {level=3,  range=4.4, interval=0.86, uses=45,  maxlevel=3, handle='group:stick'},
-	Cobalt    = {level=4,  range=4.6, interval=0.84, uses=60,  maxlevel=3, handle='group:stick'},
-	Thorium =   {level=5,  range=4.8, interval=0.82, uses=90,  maxlevel=3, handle='xtraores_redo:steel_handle'},
-	Osmium =    {level=6,  range=5.0, interval=0.80, uses=125, maxlevel=3, handle='xtraores_redo:steel_handle',},
-	Rhenium =   {level=7,  range=5.2, interval=0.78, uses=175, maxlevel=3, handle='xtraores_redo:steel_handle',},
-	Vanadium =  {level=8,  range=5.4, interval=0.76, uses=255, maxlevel=3, handle='xtraores_redo:steel_handle',},
-	Rarium =    {level=9,  range=5.6, interval=0.74, uses=300, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
-	Orichalcum ={level=10, range=5.8, interval=0.72, uses=360, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
-	Titanium =  {level=11, range=5.9, interval=0.70, uses=390, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
-	Chromium =  {level=12, range=6.0, interval=0.69, uses=420, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
+	Platinum  = {level=2,  range=4.0, interval=1.00, uses=20,  maxlevel=2, handle='group:stick'},
+	Palladium = {level=3,  range=4.0, interval=0.90, uses=45,  maxlevel=2, handle='group:stick'},
+	Cobalt    = {level=4,  range=4.0, interval=0.89, uses=55,  maxlevel=2, handle='group:stick'},
+	Thorium =   {level=5,  range=4.0, interval=0.82, uses=90,  maxlevel=3, handle='xtraores_redo:steel_handle'},
+	Osmium =    {level=6,  range=4.0, interval=0.80, uses=125, maxlevel=3, handle='xtraores_redo:steel_handle',},
+	Rhenium =   {level=7,  range=4.0, interval=0.78, uses=175, maxlevel=3, handle='xtraores_redo:steel_handle',},
+	Vanadium =  {level=8,  range=4.0, interval=0.76, uses=255, maxlevel=3, handle='xtraores_redo:steel_handle',},
+	Rarium =    {level=9,  range=4.0, interval=0.74, uses=300, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
+	Orichalcum ={level=10, range=4.0, interval=0.72, uses=360, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
+	Titanium =  {level=11, range=4.0, interval=0.70, uses=390, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
+	Chromium =  {level=12, range=4.0, interval=0.69, uses=420, maxlevel=3, handle='xtraores_redo:duraglass_handle',},
 }
 
 local picks_table = {
-	Nickel =    {damage=3,  crackytimes={6.00, 1.85, 0.90}},
-	Platinum =  {damage=6,  crackytimes={2.40, 1.20, 0.60}},
-	Palladium = {damage=8,  crackytimes={1.85, 1.10, 0.55, 4.00}},
-	Cobalt =    {damage=10, crackytimes={1.65, 0.95, 0.45, 3.50, 6.00}},
+	Nickel =    {damage=3,  crackytimes={6.00, 1.90, 0.90}},
+	Platinum =  {damage=4,  crackytimes={4.50, 1.70, 0.75}},
+	Palladium = {damage=5,  crackytimes={1.90, 1.10, 0.70, 4.00}},
+	Cobalt =    {damage=6,  crackytimes={1.80, 1.00, 0.50, 3.50, 6.00}},
 	Thorium =   {damage=12, crackytimes={1.50, 0.85, 0.40, 3.50, 5.40, 8.00},
 							 crumblytimes={0.6, 0.2, 0.15}},
 	Osmium =    {damage=14, crackytimes={1.30, 0.75, 0.35, 3.00, 5.40, 7.20, 10.0},
@@ -44,9 +44,9 @@ end
 
 local shovels_table = {
 	Nickel =    {damage=3, crumblytimes={1.80, 1.05, 0.45}},
-	Platinum =  {damage=5, crumblytimes={1.20, 0.60, 0.30}},
-	Palladium = {damage=7, crumblytimes={0.95, 0.40, 0.25}},
-	Cobalt =    {damage=9, crumblytimes={0.80, 0.30, 0.20}},
+	Platinum =  {damage=3, crumblytimes={1.65, 1.00, 0.40}},
+	Palladium = {damage=4, crumblytimes={1.00, 0.60, 0.35}},
+	Cobalt =    {damage=5, crumblytimes={0.95, 0.50, 0.25}},
 }
 for k,v in pairs(shovels_table) do
 	shovels_table[k].level = common_table[k].level
@@ -56,10 +56,10 @@ end
 
 
 local axes_table = {
-	Nickel =    {damage=4,  choppytimes={3.50, 1.60, 1.15}},
-	Platinum =  {damage=6,  choppytimes={2.20, 1.00, 0.60}},
-	Palladium = {damage=8,  choppytimes={1.95, 0.80, 0.45}},
-	Cobalt =    {damage=10, choppytimes={1.80, 0.70, 0.40}},
+	Nickel =    {damage=3,  choppytimes={3.60, 1.90, 1.2}},
+	Platinum =  {damage=4,  choppytimes={2.80, 1.60, 0.95}},
+	Palladium = {damage=6,  choppytimes={2.00, 1.00, 0.75}},
+	Cobalt =    {damage=8,  choppytimes={1.90, 0.90, 0.50}},
 	Thorium =   {damage=12, choppytimes={1.60, 0.60, 0.35}},
 	Osmium =    {damage=14, choppytimes={1.40, 0.50, 0.30}},
 	Rhenium =   {damage=16, choppytimes={1.10, 0.30, 0.20}},
@@ -78,9 +78,9 @@ end
 
 local swords_table = {
 	Nickel =    {damage=5,  snappytimes={3.50, 1.45, 0.40}},
-	Platinum =  {damage=7,  snappytimes={2.00, 1.00, 0.35}},
-	Palladium = {damage=9,  snappytimes={1.75, 0.80, 0.25}},
-	Cobalt =    {damage=11, snappytimes={1.60, 0.70, 0.20}},
+	Platinum =  {damage=6,  snappytimes={2.75, 1.25, 0.35}},
+	Palladium = {damage=7,  snappytimes={1.80, 1.00, 0.35}},
+	Cobalt =    {damage=8,  snappytimes={1.80, 0.90, 0.30}},
 	Thorium =   {damage=13, snappytimes={1.40, 0.60, 0.15}, has_spear=true},
 	Osmium =    {damage=15, snappytimes={1.20, 0.50, 0.10}, has_spear=true},
 	Rhenium =   {damage=17, snappytimes={1.00, 0.40, 0.05}, has_spear=true},
