@@ -6,14 +6,14 @@ if minetest.get_modpath("3d_armor") then
 		{name = "Platinum",  level=2,  protection=15, heal=6,  use=300,  speed=-0.01, gravity=-0.01,  jump=-0.01},
 		{name = "Palladium", level=3,  protection=17, heal=9,  use=250,  speed=-0.01, gravity=0.0,  jump=0.0},
 		{name = "Cobalt",    level=4,  protection=20, heal=12, use=120,  speed=-0.01, gravity=-0.02,  jump=0.0},
-		{name = "Thorium",   level=5,  protection=20.4, heal=12.2, use=100,  speed= 0.11, gravity=0.0,  jump=0.03},
-		{name = "Osmium",    level=6,  protection=20.6, heal=12.3, use= 60,  speed= 0.16, gravity=0.0,  jump=0.05},
-		{name = "Rhenium",   level=7,  protection=20.8, heal=12.4, use= 40,  speed= 0.21, gravity=-0.01,  jump=0.08},
-		{name = "Vanadium",  level=8,  protection=21.0, heal=12.5, use= 25,  speed= 0.25, gravity=-0.02,  jump=0.10},
-		{name = "Rarium",    level=9,  protection=21.2, heal=12.6, use= 20,  speed= 0.29, gravity=-0.03,  jump=0.12},
-		{name = "Orichalcum",level=10, protection=21.4, heal=12.7, use= 17,  speed= 0.33, gravity=-0.04,  jump=0.14},
-		{name = "Titanium",  level=11, protection=21.5, heal=12.8, use= 15,  speed= 0.34, gravity=-0.045, jump=0.15},
-		{name = "Chromium",  level=12, protection=21.6, heal=12.9, use= 14,  speed= 0.35, gravity=-0.05,  jump=0.16},
+		{name = "Thorium",   level=5,  protection=21, heal=12, use=100,  speed= -0.03, gravity=-0.06,  jump=-0.03},
+		{name = "Osmium",    level=6,  protection=20.5, heal=12.5, use= 100,  speed= 0.00, gravity=0.00,  jump=0.00},
+		{name = "Rhenium",   level=7,  protection=20.6, heal=12.4, use= 50,  speed= 0.10, gravity=-0.01,  jump=0.05},
+		{name = "Vanadium",  level=8,  protection=20.6, heal=12.4, use= 50,  speed= 0.25, gravity=-0.03,  jump=0.10},
+		{name = "Rarium",    level=9,  protection=20,   heal=14,   use= 100, speed= 0.15, gravity=-0.03,  jump=0.20},
+		{name = "Orichalcum",level=10, protection=20.7, heal=12.6, use= 45,  speed= 0.15, gravity=-0.03,  jump=0.10},
+		{name = "Titanium",  level=11, protection=22.0, heal=12.0, use= 25,  speed= 0.15, gravity=-0.04,  jump=0.15},
+		{name = "Chromium",  level=12, protection=22.0, heal=12.0, use= 30,  speed= 0.25, gravity=-0.05,  jump=0.20},
 	}
 
 	local armor_names = {
