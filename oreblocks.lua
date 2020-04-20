@@ -1,17 +1,17 @@
 local block_table = {
 	Nickel = 	   {cracky=3},
 	Platinum =   {cracky=2},
-	Palladium =  {cracky=1},
-	Cobalt =		 {cracky=4},
-	Thorium = 	 {cracky=5, end_on_blast=true},
-	Osmium = 		 {cracky=6, end_on_blast=true},
-	Rhenium = 	 {cracky=7, end_on_blast=true},
-	Vanadium = 	 {cracky=8, end_on_blast=true},
-	Rarium = 	 	 {cracky=9, end_on_blast=true, animation_length=0.66, light={brick=5, block=5, deco=5}},
+	Athenium =  {cracky=1},
+	Koblint =		 {cracky=4},
+	Ormium = 	 {cracky=5, end_on_blast=true},
+	Varytrium = 		 {cracky=6, end_on_blast=true},
+	Flumium = 	 {cracky=7, end_on_blast=true},
+	Syrium = 	 {cracky=8, end_on_blast=true},
+	Zeltium = 	 	 {cracky=9, end_on_blast=true, animation_length=0.66, light={brick=5, block=5, deco=5}},
 	Orichalcum = {cracky=10, end_on_blast=true},
-	Titanium = 	 {cracky=11, end_on_blast=true},
-	Uranium = 	 {cracky=11, end_on_blast=true, animation_length=0.75, light={brick=10, block=14, deco=8}},
-	Chromium =   {cracky=12, end_on_blast=true},
+	Tartarsium = 	 {cracky=11, end_on_blast=true},
+	Luminum = 	 {cracky=11, end_on_blast=true, animation_length=0.75, light={brick=10, block=14, deco=8}},
+	Tsevium =   {cracky=12, end_on_blast=true},
 }
 
 local function register_xtrablocks(name, props)

@@ -131,9 +131,9 @@ minetest.register_craft({
 
 -----------------------handgun---------------
 
-minetest.register_tool("xtraores_redo:cobalt_handgun", {
-		description = "".. core.colorize("#68fff6", "Cobalt handgun\n")..core.colorize("#FFFFFF", "Ranged damage: 12\n")..core.colorize("#FFFFFF", "Bullet speed: 45\n")..core.colorize("#FFFFFF", "Reload delay: 15\n")..core.colorize("#FFFFFF", "Xtraores gun level: 4"),
-	inventory_image = "xtraores_redo_cobalt_handgun.png",
+minetest.register_tool("xtraores_redo:koblint_handgun", {
+		description = "".. core.colorize("#68fff6", "Koblint handgun\n")..core.colorize("#FFFFFF", "Ranged damage: 12\n")..core.colorize("#FFFFFF", "Bullet speed: 45\n")..core.colorize("#FFFFFF", "Reload delay: 15\n")..core.colorize("#FFFFFF", "Xtraores gun level: 4"),
+	inventory_image = "xtraores_redo_koblint_handgun.png",
 	wield_scale = {x=1.0,y=1.0,z=1.0},
 	range = 0,
 	on_use = function(itemstack, user, pointed_thing)
@@ -143,12 +143,12 @@ minetest.register_tool("xtraores_redo:cobalt_handgun", {
 	shooter = user
 		meta:set_int("xo_weapon_cooldown",0)
 		local inv = user:get_inventory()
-		if not inv:contains_item("main", "xtraores_redo:cobalt_bullet 1") then
+		if not inv:contains_item("main", "xtraores_redo:koblint_bullet 1") then
 			minetest.sound_play("xtraores_redo_empty", {object=user})
 			return itemstack
 		end
 		if not minetest.setting_getbool("creative_mode") then
-			inv:remove_item("main", "xtraores_redo:cobalt_bullet ")
+			inv:remove_item("main", "xtraores_redo:koblint_bullet ")
 itemstack:add_wear(65535/1750)
 		end
 		local pos = user:getpos()
@@ -156,7 +156,7 @@ itemstack:add_wear(65535/1750)
 		local yaw = user:get_look_yaw()
 		if pos and dir and yaw then
 			pos.y = pos.y + 1.6
-			local obj = minetest.add_entity(pos, "xtraores_redo:cobaltshot")
+			local obj = minetest.add_entity(pos, "xtraores_redo:koblintshot")
 			if obj then
 				minetest.sound_play("xtraores_redo_handgun", {object=obj})
 				obj:setvelocity({x=dir.x * 45, y=dir.y * 45, z=dir.z * 45})
@@ -180,17 +180,17 @@ itemstack:add_wear(65535/1750)
 	end,
 })
 
-local xtraores_redo_cobaltshot = {
+local xtraores_redo_koblintshot = {
 	physical = false,
 	timer = 0,
 	glow = 20,
 	visual = "wielditem",
 	visual_size = {x=0.25, y=0.4,},
-	textures = {'xtraores_redo:cobalt_shot'},
+	textures = {'xtraores_redo:koblint_shot'},
 	lastpos= {},
 	collisionbox = {0, 0, 0, 0, 0, 0},
 }
-xtraores_redo_cobaltshot.on_step = function(self, dtime)
+xtraores_redo_koblintshot.on_step = function(self, dtime)
 	self.timer = self.timer + dtime
 	local pos = self.object:getpos()
 	local node = minetest.get_node(pos)
@@ -200,7 +200,7 @@ xtraores_redo_cobaltshot.on_step = function(self, dtime)
 		local objs = minetest.get_objects_inside_radius({x = pos.x, y = pos.y, z = pos.z}, 1)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
-				if obj:get_luaentity().name ~= "xtraores_redo:cobaltshot" and obj:get_luaentity().name ~= "__builtin:item" then
+				if obj:get_luaentity().name ~= "xtraores_redo:koblintshot" and obj:get_luaentity().name ~= "__builtin:item" then
 					local damage = 12
 					obj:punch(shooter, 1.0, {
 						full_punch_interval = 1.0,
@@ -233,29 +233,29 @@ xtraores_redo_cobaltshot.on_step = function(self, dtime)
 	self.lastpos= {x = pos.x, y = pos.y, z = pos.z}
 end
 
-minetest.register_entity("xtraores_redo:cobaltshot", xtraores_redo_cobaltshot)
+minetest.register_entity("xtraores_redo:koblintshot", xtraores_redo_koblintshot)
 
-minetest.register_craftitem("xtraores_redo:cobalt_shot", {
-	inventory_image = "xtraores_redo_cobalt_shot.png",
+minetest.register_craftitem("xtraores_redo:koblint_shot", {
+	inventory_image = "xtraores_redo_koblint_shot.png",
 })
 
-minetest.register_craftitem("xtraores_redo:cobalt_bullet", {
-		description = "".. core.colorize("#68fff6", "cobalt  bullet\n")..core.colorize("#FFFFFF", "Used by guns of level 4\n")..core.colorize("#FFFFFF", "Xtraores ammo level: 4"),
+minetest.register_craftitem("xtraores_redo:koblint_bullet", {
+		description = "".. core.colorize("#68fff6", "koblint  bullet\n")..core.colorize("#FFFFFF", "Used by guns of level 4\n")..core.colorize("#FFFFFF", "Xtraores ammo level: 4"),
 	stack_max= 500,
-	inventory_image = "xtraores_redo_cobalt_bullet.png",
+	inventory_image = "xtraores_redo_koblint_bullet.png",
 })
 
 minetest.register_craft( {
 	type = "shapeless",
-	output = "xtraores_redo:cobalt_handgun",
-	recipe = {"xtraores_redo:cobalt_top", "xtraores_redo:cobalt_base", "xtraores_redo:cobalt_handle"},
+	output = "xtraores_redo:koblint_handgun",
+	recipe = {"xtraores_redo:koblint_top", "xtraores_redo:koblint_base", "xtraores_redo:koblint_handle"},
 })
 
 minetest.register_craft({
-	output = 'xtraores_redo:cobalt_bullet 25',
+	output = 'xtraores_redo:koblint_bullet 25',
 	recipe = {
-		{'', 'xtraores_redo:cobalt_bar', ''},
-		{'', 'xtraores_redo:cobalt_bar', ''},
+		{'', 'xtraores_redo:koblint_bar', ''},
+		{'', 'xtraores_redo:koblint_bar', ''},
 		{'', 'default:mese_crystal', ''},
 	}
 })
@@ -389,7 +389,7 @@ minetest.register_craft({
 	recipe = {
 		{'', 'xtraores_redo:orichalcum_bar', ''},
 		{'', 'xtraores_redo:orichalcum_bar', ''},
-		{'', 'xtraores_redo:antracite_ore', ''},
+		{'', 'xtraores_redo:anthracite_ore', ''},
 	}
 })
 
@@ -458,9 +458,9 @@ minetest.register_tool("xtraores_redo:sword_radioactive", {
 minetest.register_craft({
 	output = 'xtraores_redo:sword_radioactive',
 	recipe = {
-		{'', 'xtraores_redo:uranium_bar', 'xtraores_redo:uranium_bar'},
-		{'', 'xtraores_redo:uranium_bar', ''},
-		{'xtraores_redo:titanium_bar', 'xtraores_redo:duraglass_handle', ''},
+		{'', 'xtraores_redo:luminum_bar', 'xtraores_redo:luminum_bar'},
+		{'', 'xtraores_redo:luminum_bar', ''},
+		{'xtraores_redo:tartarsium_bar', 'xtraores_redo:duraglass_handle', ''},
 	}
 })
 
@@ -525,14 +525,14 @@ minetest.register_craftitem("xtraores_redo:radioactive_ray_shot", {
 })
 
 
------------------------titanium guns---------------
+-----------------------tartarsium guns---------------
 
-minetest.register_tool("xtraores_redo:titanium_machinegun", {
-		description = "".. core.colorize("#68fff6", "Titanium machinegun\n")..core.colorize("#FFFFFF", "Ranged damage: 22\n")..core.colorize("#FFFFFF", "Bullet speed: 45\n") ..core.colorize("#FFFFFF", "Reload delay: 5\n")..core.colorize("#FFFFFF", "Xtraores gun level: 11"),
-	inventory_image = "xtraores_redo_titanium_machinegun.png",
-	projectile_attack = "xtraores_redo:titaniumshot_machinegun",
+minetest.register_tool("xtraores_redo:tartarsium_machinegun", {
+		description = "".. core.colorize("#68fff6", "Tartarsium machinegun\n")..core.colorize("#FFFFFF", "Ranged damage: 22\n")..core.colorize("#FFFFFF", "Bullet speed: 45\n") ..core.colorize("#FFFFFF", "Reload delay: 5\n")..core.colorize("#FFFFFF", "Xtraores gun level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_machinegun.png",
+	projectile_attack = "xtraores_redo:tartarsiumshot_machinegun",
 	projectile_sound = "xtraores_redo_machinegun",
-	needed_ammo = "xtraores_redo:titanium_bullet 1",
+	needed_ammo = "xtraores_redo:tartarsium_bullet 1",
 	consumed_ammo = 0,
 	projectile_cooldown = 7,
 	projectile_velocity = 45,
@@ -542,9 +542,9 @@ minetest.register_tool("xtraores_redo:titanium_machinegun", {
 })
 
 
-minetest.register_tool("xtraores_redo:titanium_handgun", {
-		description = "".. core.colorize("#68fff6", "titanium handgun\n")..core.colorize("#FFFFFF", "Ranged damage: 28\n")..core.colorize("#FFFFFF", "Bullet speed: 55\n")..core.colorize("#FFFFFF", "Reload delay: 12\n")..core.colorize("#FFFFFF", "Xtraores gun level: 11"),
-	inventory_image = "xtraores_redo_titanium_handgun.png",
+minetest.register_tool("xtraores_redo:tartarsium_handgun", {
+		description = "".. core.colorize("#68fff6", "tartarsium handgun\n")..core.colorize("#FFFFFF", "Ranged damage: 28\n")..core.colorize("#FFFFFF", "Bullet speed: 55\n")..core.colorize("#FFFFFF", "Reload delay: 12\n")..core.colorize("#FFFFFF", "Xtraores gun level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_handgun.png",
 	wield_scale = {x=1.0,y=1.0,z=1.0},
 	range = 0,
 	on_use = function(itemstack, user, pointed_thing)
@@ -554,12 +554,12 @@ minetest.register_tool("xtraores_redo:titanium_handgun", {
 	shooter = user
 		meta:set_int("xo_weapon_cooldown",0)
 		local inv = user:get_inventory()
-		if not inv:contains_item("main", "xtraores_redo:titanium_bullet 1") then
+		if not inv:contains_item("main", "xtraores_redo:tartarsium_bullet 1") then
 			minetest.sound_play("xtraores_redo_empty", {object=user})
 			return itemstack
 		end
 		if not minetest.setting_getbool("creative_mode") then
-			inv:remove_item("main", "xtraores_redo:titanium_bullet ")
+			inv:remove_item("main", "xtraores_redo:tartarsium_bullet ")
 itemstack:add_wear(65535/20000)
 		end
 		local pos = user:getpos()
@@ -567,7 +567,7 @@ itemstack:add_wear(65535/20000)
 		local yaw = user:get_look_yaw()
 		if pos and dir and yaw then
 			pos.y = pos.y + 1.6
-			local obj = minetest.add_entity(pos, "xtraores_redo:titaniumshot_handgun")
+			local obj = minetest.add_entity(pos, "xtraores_redo:tartarsiumshot_handgun")
 			if obj then
 				minetest.sound_play("xtraores_redo_handgun", {object=obj})
 				obj:setvelocity({x=dir.x * 55, y=dir.y * 55, z=dir.z * 55})
@@ -591,17 +591,17 @@ itemstack:add_wear(65535/20000)
 	end,
 })
 
-local xtraores_redo_titaniumshot_handgun = {
+local xtraores_redo_tartarsiumshot_handgun = {
 	physical = false,
 	timer = 0,
 	glow = 20,
 	visual = "wielditem",
 	visual_size = {x=0.25, y=0.4,},
-	textures = {'xtraores_redo:titanium_shot'},
+	textures = {'xtraores_redo:tartarsium_shot'},
 	lastpos= {},
 	collisionbox = {0, 0, 0, 0, 0, 0},
 }
-xtraores_redo_titaniumshot_handgun.on_step = function(self, dtime)
+xtraores_redo_tartarsiumshot_handgun.on_step = function(self, dtime)
 	self.timer = self.timer + dtime
 	local pos = self.object:getpos()
 	local node = minetest.get_node(pos)
@@ -611,7 +611,7 @@ xtraores_redo_titaniumshot_handgun.on_step = function(self, dtime)
 		local objs = minetest.get_objects_inside_radius({x = pos.x, y = pos.y, z = pos.z}, 1)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
-				if obj:get_luaentity().name ~= "xtraores_redo:titaniumshot_handgun" and obj:get_luaentity().name ~= "__builtin:item" then
+				if obj:get_luaentity().name ~= "xtraores_redo:tartarsiumshot_handgun" and obj:get_luaentity().name ~= "__builtin:item" then
 					local damage = 28
 					obj:punch(shooter, 1.0, {
 						full_punch_interval = 1.0,
@@ -644,19 +644,19 @@ xtraores_redo_titaniumshot_handgun.on_step = function(self, dtime)
 	self.lastpos= {x = pos.x, y = pos.y, z = pos.z}
 end
 
-minetest.register_entity("xtraores_redo:titaniumshot_handgun", xtraores_redo_titaniumshot_handgun)
+minetest.register_entity("xtraores_redo:tartarsiumshot_handgun", xtraores_redo_tartarsiumshot_handgun)
 
-local xtraores_redo_titaniumshot_machinegun = {
+local xtraores_redo_tartarsiumshot_machinegun = {
 	physical = false,
 	timer = 0,
 	glow = 20,
 	visual = "wielditem",
 	visual_size = {x=0.25, y=0.4,},
-	textures = {'xtraores_redo:titanium_shot'},
+	textures = {'xtraores_redo:tartarsium_shot'},
 	lastpos= {},
 	collisionbox = {0, 0, 0, 0, 0, 0},
 }
-xtraores_redo_titaniumshot_machinegun.on_step = function(self, dtime)
+xtraores_redo_tartarsiumshot_machinegun.on_step = function(self, dtime)
 	self.timer = self.timer + dtime
 	local pos = self.object:getpos()
 	local node = minetest.get_node(pos)
@@ -666,7 +666,7 @@ xtraores_redo_titaniumshot_machinegun.on_step = function(self, dtime)
 		local objs = minetest.get_objects_inside_radius({x = pos.x, y = pos.y, z = pos.z}, 1)
 		for k, obj in pairs(objs) do
 			if obj:get_luaentity() ~= nil then
-				if obj:get_luaentity().name ~= "xtraores_redo:titaniumshot_machinegun" and obj:get_luaentity().name ~= "__builtin:item" then
+				if obj:get_luaentity().name ~= "xtraores_redo:tartarsiumshot_machinegun" and obj:get_luaentity().name ~= "__builtin:item" then
 					local damage = 22
 					obj:punch(shooter, 1.0, {
 						full_punch_interval = 1.0,
@@ -699,37 +699,37 @@ xtraores_redo_titaniumshot_machinegun.on_step = function(self, dtime)
 	self.lastpos= {x = pos.x, y = pos.y, z = pos.z}
 end
 
-minetest.register_entity("xtraores_redo:titaniumshot_machinegun", xtraores_redo_titaniumshot_machinegun)
+minetest.register_entity("xtraores_redo:tartarsiumshot_machinegun", xtraores_redo_tartarsiumshot_machinegun)
 
 
-minetest.register_craftitem("xtraores_redo:titanium_shot", {
-	inventory_image = "xtraores_redo_titanium_shot.png",
+minetest.register_craftitem("xtraores_redo:tartarsium_shot", {
+	inventory_image = "xtraores_redo_tartarsium_shot.png",
 })
 
-minetest.register_craftitem("xtraores_redo:titanium_bullet", {
-		description = "".. core.colorize("#68fff6", "titanium  bullet\n")..core.colorize("#FFFFFF", "Used by guns of level 11\n")..core.colorize("#FFFFFF", "Xtraores ammo level: 11"),
+minetest.register_craftitem("xtraores_redo:tartarsium_bullet", {
+		description = "".. core.colorize("#68fff6", "tartarsium  bullet\n")..core.colorize("#FFFFFF", "Used by guns of level 11\n")..core.colorize("#FFFFFF", "Xtraores ammo level: 11"),
 	stack_max= 500,
-	inventory_image = "xtraores_redo_titanium_bullet.png",
+	inventory_image = "xtraores_redo_tartarsium_bullet.png",
 })
 
 minetest.register_craft( {
 	type = "shapeless",
-	output = "xtraores_redo:titanium_handgun",
-	recipe = {"xtraores_redo:titanium_gun_barrel","xtraores_redo:titanium_handgun_base", "xtraores_redo:titanium_gun_handle"},
+	output = "xtraores_redo:tartarsium_handgun",
+	recipe = {"xtraores_redo:tartarsium_gun_barrel","xtraores_redo:tartarsium_handgun_base", "xtraores_redo:tartarsium_gun_handle"},
 })
 
 minetest.register_craft( {
 	type = "shapeless",
-	output = "xtraores_redo:titanium_machinegun",
-	recipe = {"xtraores_redo:titanium_gun_barrel","xtraores_redo:titanium_machinegun_base","xtraores_redo:titanium_machinegun_stock","xtraores_redo:titanium_gun_barrel","xtraores_redo:titanium_machinegun_mag","xtraores_redo:titanium_gun_handle"},
+	output = "xtraores_redo:tartarsium_machinegun",
+	recipe = {"xtraores_redo:tartarsium_gun_barrel","xtraores_redo:tartarsium_machinegun_base","xtraores_redo:tartarsium_machinegun_stock","xtraores_redo:tartarsium_gun_barrel","xtraores_redo:tartarsium_machinegun_mag","xtraores_redo:tartarsium_gun_handle"},
 })
 
 
 minetest.register_craft({
-	output = 'xtraores_redo:titanium_bullet 100',
+	output = 'xtraores_redo:tartarsium_bullet 100',
 	recipe = {
 		{'', 'default:diamond', ''},
-		{'', 'xtraores_redo:titanium_bar', ''},
-		{'', 'xtraores_redo:titanium_bar', ''},
+		{'', 'xtraores_redo:tartarsium_bar', ''},
+		{'', 'xtraores_redo:tartarsium_bar', ''},
 	}
 })

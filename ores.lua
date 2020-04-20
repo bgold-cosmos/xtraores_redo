@@ -1,20 +1,20 @@
 local ore_table = {
 	{name = "Nickel",    level=1,  clustering = {{scarcity=16, y_max=100}, {scarcity=10,y_max=-64}}, cooktime=2},
 	{name = "Platinum",  level=2,  clustering = {{scarcity=14, y_max=-250}},   cooktime=5},
-	{name = "Palladium", level=3,  clustering = {{scarcity=16, y_max=-750}},  cooktime=12},
-	{name = "Cobalt",    level=4,  clustering = {{scarcity=18, y_max=-1200}},  cooktime=20},
-	{name = "Thorium",   level=5,  clustering = {{scarcity=19, y_max=-1900}}, cooktime=32, end_on_blast=true},
-	-- antracite is more like coal, handled separately
-	{name = "Osmium",    level=6,  clustering = {{scarcity=21, y_max=-3500}}, cooktime=45, end_on_blast=true},
-	{name = "Rhenium",   level=7,  clustering = {{scarcity=23, y_max=-5750}}, cooktime=60, end_on_blast=true},
-	{name = "Vanadium",  level=8,  clustering = {{scarcity=25, y_max=-8000}}, cooktime=75, end_on_blast=true},
-	-- rarium is glowy and animated,
-	{name = "Rarium",    level=9,  clustering = {{scarcity=27, y_max=-10000, num_ores=3, size=3}}, cooktime=90,  end_on_blast=true, animated=true, light=4},
+	{name = "Athenium", level=3,  clustering = {{scarcity=16, y_max=-750}},  cooktime=12},
+	{name = "Koblint",    level=4,  clustering = {{scarcity=18, y_max=-1200}},  cooktime=20},
+	{name = "Ormium",   level=5,  clustering = {{scarcity=19, y_max=-1900}}, cooktime=32, end_on_blast=true},
+	-- anthracite is more like coal, handled separately
+	{name = "Varytrium",    level=6,  clustering = {{scarcity=21, y_max=-3500}}, cooktime=45, end_on_blast=true},
+	{name = "Flumium",   level=7,  clustering = {{scarcity=23, y_max=-5750}}, cooktime=60, end_on_blast=true},
+	{name = "Syrium",  level=8,  clustering = {{scarcity=25, y_max=-8000}}, cooktime=75, end_on_blast=true},
+	-- Zeltium is glowy and animated,
+	{name = "Zeltium",    level=9,  clustering = {{scarcity=27, y_max=-10000, num_ores=3, size=3}}, cooktime=90,  end_on_blast=true, animated=true, light=4},
 	{name = "Orichalcum",level=10, clustering = {{scarcity=28, y_max=-12500, num_ores=3, size=3}}, cooktime=120, end_on_blast=true},
-	{name = "Titanium",  level=11, clustering = {{scarcity=29, y_max=-15000, num_ores=3, size=3}}, cooktime=145, end_on_blast=true},
-	-- uranium is glowy and animated
-	{name = "Uranium",   level=11, clustering = {{scarcity=30, y_max=-15000, num_ores=2, size=3}}, cooktime=145, end_on_blast=true, animated=true, light=7},
-	{name = "Chromium",  level=12, clustering = {{scarcity=31, y_max=-18000, num_ores=3, size=3}}, cooktime=180, end_on_blast=true},
+	{name = "Tartarsium",  level=11, clustering = {{scarcity=29, y_max=-15000, num_ores=3, size=3}}, cooktime=145, end_on_blast=true},
+	-- luminum is glowy and animated
+	{name = "Luminum",   level=11, clustering = {{scarcity=30, y_max=-15000, num_ores=2, size=3}}, cooktime=145, end_on_blast=true, animated=true, light=7},
+	{name = "Tsevium",  level=12, clustering = {{scarcity=31, y_max=-18000, num_ores=3, size=3}}, cooktime=180, end_on_blast=true},
 }
 
 local function register_xtraore(m)
@@ -73,12 +73,12 @@ for i,m in ipairs(ore_table) do
 end
 
 
------------------antracite ore--------------
+-----------------anthracite ore--------------
 
-minetest.register_node("xtraores_redo:antracite_ore", {
-		description = "" ..core.colorize("#68fff6", "antracite\n")..core.colorize("#FFFFFF", "Can be placed\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "xtraores_redo ore level: 5"),
-	tiles = {"default_stone.png^xtraores_redo_antracite_ore.png"},
-	inventory_image = "xtraores_redo_antracite_lump.png",
+minetest.register_node("xtraores_redo:anthracite_ore", {
+		description = "" ..core.colorize("#68fff6", "anthracite\n")..core.colorize("#FFFFFF", "Can be placed\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "xtraores_redo ore level: 5"),
+	tiles = {"default_stone.png^xtraores_redo_anthracite_ore.png"},
+	inventory_image = "xtraores_redo_anthracite_lump.png",
 	stack_max= 999,
 	groups = {cracky = 5},
 	on_blast = function() end,
@@ -87,7 +87,7 @@ minetest.register_node("xtraores_redo:antracite_ore", {
 
 	minetest.register_ore({
 		ore_type       = "scatter",
-		ore            = "xtraores_redo:antracite_ore",
+		ore            = "xtraores_redo:anthracite_ore",
 		wherein        = "default:stone",
 		clust_scarcity = 15 * 15 * 15,
 		clust_num_ores = 6,
@@ -97,16 +97,16 @@ minetest.register_node("xtraores_redo:antracite_ore", {
 	})
 
 minetest.register_craft({
-	output = 'xtraores_redo:antracite_torch 5',
+	output = 'xtraores_redo:anthracite_torch 5',
 	recipe = {
 		{'', '', ''},
-		{'', 'xtraores_redo:antracite_ore', ''},
+		{'', 'xtraores_redo:anthracite_ore', ''},
 		{'', 'xtraores_redo:steel_handle', ''},
 	}
 })
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "xtraores_redo:antracite_ore",
+	recipe = "xtraores_redo:anthracite_ore",
 	burntime = 164,
 })

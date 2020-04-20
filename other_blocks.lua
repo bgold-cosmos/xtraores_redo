@@ -1,15 +1,15 @@
---------------------antracite torch-------------
+--------------------anthracite torch-------------
 
-minetest.register_node("xtraores_redo:antracite_torch", {
-		description = "" ..core.colorize("#68fff6", "Antracite torch\n")..core.colorize("#FFFFFF", "range: 5\n")..core.colorize("#FFFFFF", "Can be placed"),
+minetest.register_node("xtraores_redo:anthracite_torch", {
+		description = "" ..core.colorize("#68fff6", "Anthracite torch\n")..core.colorize("#FFFFFF", "range: 5\n")..core.colorize("#FFFFFF", "Can be placed"),
 	drawtype = "mesh",
 	range = 5.0,
 	stack_max = 999,
 	mesh = "torch_floor.obj",
-	inventory_image = "xtraores_redo_antracite_torch.png",
-	wield_image = "xtraores_redo_antracite_torch.png",
+	inventory_image = "xtraores_redo_anthracite_torch.png",
+	wield_image = "xtraores_redo_anthracite_torch.png",
 	tiles = {{
-		    name = "xtraores_redo_antracite_torch_on_floor_animated.png",
+		    name = "xtraores_redo_anthracite_torch_on_floor_animated.png",
 		    animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.3}
 	}},
 	paramtype = "light",
@@ -18,8 +18,8 @@ minetest.register_node("xtraores_redo:antracite_torch", {
 	walkable = false,
 	liquids_pointable = false,
 	light_source = 14,
-	groups = {choppy=2, dig_immediate=3, attached_node=1, antracite_torch=1},
-	drop = "xtraores_redo:antracite_torch",
+	groups = {choppy=2, dig_immediate=3, attached_node=1, anthracite_torch=1},
+	drop = "xtraores_redo:anthracite_torch",
 	selection_box = {
 		type = "wallmounted",
 		wall_bottom = {-1/8, -1/2, -1/8, 1/8, 2/16, 1/8},
@@ -39,25 +39,25 @@ minetest.register_node("xtraores_redo:antracite_torch", {
 		local wdir = minetest.dir_to_wallmounted(vector.subtract(under, above))
 		local fakestack = itemstack
 		if wdir == 0 then
-			fakestack:set_name("xtraores_redo:antracite_torch_ceiling")
+			fakestack:set_name("xtraores_redo:anthracite_torch_ceiling")
 		elseif wdir == 1 then
-			fakestack:set_name("xtraores_redo:antracite_torch")
+			fakestack:set_name("xtraores_redo:anthracite_torch")
 		else
-			fakestack:set_name("xtraores_redo:antracite_torch_wall")
+			fakestack:set_name("xtraores_redo:anthracite_torch_wall")
 		end
 
 		itemstack = minetest.item_place(fakestack, placer, pointed_thing, wdir)
-		itemstack:set_name("xtraores_redo:antracite_torch")
+		itemstack:set_name("xtraores_redo:anthracite_torch")
 
 		return itemstack
 	end
 })
 
-minetest.register_node("xtraores_redo:antracite_torch_wall", {
+minetest.register_node("xtraores_redo:anthracite_torch_wall", {
 	drawtype = "mesh",
 	mesh = "torch_wall.obj",
 	tiles = {{
-		    name = "xtraores_redo_antracite_torch_on_floor_animated.png",
+		    name = "xtraores_redo_anthracite_torch_on_floor_animated.png",
 		    animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.3}
 	}},
 	paramtype = "light",
@@ -65,8 +65,8 @@ minetest.register_node("xtraores_redo:antracite_torch_wall", {
 	sunlight_propagates = true,
 	walkable = false,
 	light_source = 14,
-	groups = {choppy=2, dig_immediate=3, not_in_creative_inventory=1, attached_node=1, antracite_torch=1},
-	drop = "xtraores_redo:antracite_torch",
+	groups = {choppy=2, dig_immediate=3, not_in_creative_inventory=1, attached_node=1, anthracite_torch=1},
+	drop = "xtraores_redo:anthracite_torch",
 	selection_box = {
 		type = "wallmounted",
 		wall_side = {-1/2, -1/2, -1/8, -1/8, 1/8, 1/8},
@@ -74,11 +74,11 @@ minetest.register_node("xtraores_redo:antracite_torch_wall", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("xtraores_redo:antracite_torch_ceiling", {
+minetest.register_node("xtraores_redo:anthracite_torch_ceiling", {
 	drawtype = "mesh",
 	mesh = "torch_ceiling.obj",
 	tiles = {{
-		    name = "xtraores_redo_antracite_torch_on_floor_animated.png",
+		    name = "xtraores_redo_anthracite_torch_on_floor_animated.png",
 		    animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.3}
 	}},
 	paramtype = "light",
@@ -86,8 +86,8 @@ minetest.register_node("xtraores_redo:antracite_torch_ceiling", {
 	sunlight_propagates = true,
 	walkable = false,
 	light_source = 14,
-	groups = {choppy=2, dig_immediate=3, not_in_creative_inventory=1, attached_node=1, antracite_torch=1},
-	drop = "xtraores_redo:antracite_torch",
+	groups = {choppy=2, dig_immediate=3, not_in_creative_inventory=1, attached_node=1, anthracite_torch=1},
+	drop = "xtraores_redo:anthracite_torch",
 	selection_box = {
 		type = "wallmounted",
 		wall_top = {-1/8, -1/16, -5/16, 1/8, 1/2, 1/8},

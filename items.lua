@@ -4,17 +4,17 @@
 local bar_levels = {
 	Nickel    = 1,
 	Platinum  = 2,
-	Palladium = 3,
-	Cobalt    = 4,
-	Thorium 	= 5,
-	Osmium	  = 6,
-	Rhenium 	= 7,
-	Vanadium  = 8,
-	Rarium    = 9,
+	Athenium = 3,
+	Koblint    = 4,
+	Ormium 	= 5,
+	Varytrium	  = 6,
+	Flumium 	= 7,
+	Syrium  = 8,
+	Zeltium    = 9,
 	Orichalcum= 10,
-	Titanium  = 11,
-	Uranium   = 11,
-	Chromium  = 12,
+	Tartarsium  = 11,
+	Luminum   = 11,
+	Tsevium  = 12,
 }
 
 local function register_xtrabar(name, level)
@@ -58,7 +58,7 @@ minetest.register_craft({
 	output = 'xtraores_redo:duraglass_handle 3',
 	recipe = {
 		{'', '', 'default:obsidian_shard'},
-		{'', 'xtraores_redo:osmium_bar', ''},
+		{'', 'xtraores_redo:varytrium_bar', ''},
 		{'default:glass', '', ''},
 	}
 })
@@ -112,47 +112,47 @@ minetest.register_craft({
 
 --------------------handgunparts-------------
 
-minetest.register_craftitem('xtraores_redo:cobalt_base', {
-		description = "".. core.colorize("#68fff6", "Cobalt handgun base\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 4"),
-	inventory_image = "xtraores_redo_cobalt_base.png",
+minetest.register_craftitem('xtraores_redo:koblint_base', {
+		description = "".. core.colorize("#68fff6", "Koblint handgun base\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 4"),
+	inventory_image = "xtraores_redo_koblint_base.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = 'xtraores_redo:cobalt_base',
+	output = 'xtraores_redo:koblint_base',
 	recipe = {
-		{'xtraores_redo:cobalt_bar', 'xtraores_redo:cobalt_bar', ''},
-		{'xtraores_redo:cobalt_bar', 'xtraores_redo:cobalt_bar', 'xtraores_redo:cobalt_bar'},
-		{'', 'xtraores_redo:cobalt_bar', ''},
+		{'xtraores_redo:koblint_bar', 'xtraores_redo:koblint_bar', ''},
+		{'xtraores_redo:koblint_bar', 'xtraores_redo:koblint_bar', 'xtraores_redo:koblint_bar'},
+		{'', 'xtraores_redo:koblint_bar', ''},
 	}
 })
 
-minetest.register_craftitem('xtraores_redo:cobalt_top', {
-		description = "".. core.colorize("#68fff6", "Cobalt handgun top\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 4"),
-	inventory_image = "xtraores_redo_cobalt_top.png",
+minetest.register_craftitem('xtraores_redo:koblint_top', {
+		description = "".. core.colorize("#68fff6", "Koblint handgun top\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 4"),
+	inventory_image = "xtraores_redo_koblint_top.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = 'xtraores_redo:cobalt_top',
+	output = 'xtraores_redo:koblint_top',
 	recipe = {
-		{'', '', 'xtraores_redo:cobalt_bar'},
-		{'xtraores_redo:cobalt_bar', 'xtraores_redo:cobalt_bar', 'xtraores_redo:cobalt_bar'},
+		{'', '', 'xtraores_redo:koblint_bar'},
+		{'xtraores_redo:koblint_bar', 'xtraores_redo:koblint_bar', 'xtraores_redo:koblint_bar'},
 	}
 })
 
-minetest.register_craftitem('xtraores_redo:cobalt_handle', {
-		description = "".. core.colorize("#68fff6", "Cobalt handgun handle\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 4"),
-	inventory_image = "xtraores_redo_cobalt_handle.png",
+minetest.register_craftitem('xtraores_redo:koblint_handle', {
+		description = "".. core.colorize("#68fff6", "Koblint handgun handle\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 4"),
+	inventory_image = "xtraores_redo_koblint_handle.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = 'xtraores_redo:cobalt_handle',
+	output = 'xtraores_redo:koblint_handle',
 	recipe = {
-		{'xtraores_redo:cobalt_bar', 'default:coal_lump', 'default:coal_lump'},
-		{'xtraores_redo:cobalt_bar', 'default:coal_lump', 'default:coal_lump'},
-		{'xtraores_redo:cobalt_bar', 'xtraores_redo:cobalt_bar', 'xtraores_redo:cobalt_bar'},
+		{'xtraores_redo:koblint_bar', 'default:coal_lump', 'default:coal_lump'},
+		{'xtraores_redo:koblint_bar', 'default:coal_lump', 'default:coal_lump'},
+		{'xtraores_redo:koblint_bar', 'xtraores_redo:koblint_bar', 'xtraores_redo:koblint_bar'},
 	}
 })
 
@@ -244,91 +244,91 @@ minetest.register_craft({
 	}
 })
 
---------------------titaniumgunparts-------------
+--------------------tartarsiumgunparts-------------
 
-minetest.register_craftitem('xtraores_redo:titanium_gun_barrel', {
-		description = "".. core.colorize("#68fff6", "Titanium gun barrel\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_titanium_gun_barrel.png",
+minetest.register_craftitem('xtraores_redo:tartarsium_gun_barrel', {
+		description = "".. core.colorize("#68fff6", "Tartarsium gun barrel\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_gun_barrel.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = "xtraores_redo:titanium_gun_barrel",
+	output = "xtraores_redo:tartarsium_gun_barrel",
 	recipe = {
-	{"xtraores_redo:titanium_bar","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
+	{"xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
 	}
 })
 
-minetest.register_craftitem('xtraores_redo:titanium_handgun_base', {
-		description = "".. core.colorize("#68fff6", "Titanium handgun base\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_titanium_handgun_base.png",
+minetest.register_craftitem('xtraores_redo:tartarsium_handgun_base', {
+		description = "".. core.colorize("#68fff6", "Tartarsium handgun base\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_handgun_base.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = "xtraores_redo:titanium_handgun_base",
+	output = "xtraores_redo:tartarsium_handgun_base",
 	recipe = {
-	{"xtraores_redo:titanium_bar","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
-	{"xtraores_redo:titanium_bar","xtraores_redo:titanium_bar",""},
+	{"xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
+	{"xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar",""},
 	}
 })
 
-minetest.register_craftitem('xtraores_redo:titanium_gun_handle', {
-		description = "".. core.colorize("#68fff6", "Titanium gun handle\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_titanium_gun_handle.png",
+minetest.register_craftitem('xtraores_redo:tartarsium_gun_handle', {
+		description = "".. core.colorize("#68fff6", "Tartarsium gun handle\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_gun_handle.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = "xtraores_redo:titanium_gun_handle",
+	output = "xtraores_redo:tartarsium_gun_handle",
 	recipe = {
-	{"","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
-	{"","","xtraores_redo:titanium_bar"},
-	{"","","xtraores_redo:titanium_bar"},
+	{"","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
+	{"","","xtraores_redo:tartarsium_bar"},
+	{"","","xtraores_redo:tartarsium_bar"},
 	}
 })
 
-minetest.register_craftitem('xtraores_redo:titanium_machinegun_base', {
-		description = "".. core.colorize("#68fff6", "Titanium machinegun base\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_titanium_machinegun_base.png",
+minetest.register_craftitem('xtraores_redo:tartarsium_machinegun_base', {
+		description = "".. core.colorize("#68fff6", "Tartarsium machinegun base\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_machinegun_base.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = "xtraores_redo:titanium_machinegun_base",
+	output = "xtraores_redo:tartarsium_machinegun_base",
 	recipe = {
-	{"xtraores_redo:titanium_bar","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
-	{"xtraores_redo:titanium_bar","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
-	{"","","xtraores_redo:titanium_bar"},
+	{"xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
+	{"xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
+	{"","","xtraores_redo:tartarsium_bar"},
 	}
 })
 
-minetest.register_craftitem('xtraores_redo:titanium_machinegun_stock', {
-		description = "".. core.colorize("#68fff6", "Titanium machinegun stock\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_titanium_machinegun_stock.png",
+minetest.register_craftitem('xtraores_redo:tartarsium_machinegun_stock', {
+		description = "".. core.colorize("#68fff6", "Tartarsium machinegun stock\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_machinegun_stock.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = "xtraores_redo:titanium_machinegun_stock",
+	output = "xtraores_redo:tartarsium_machinegun_stock",
 	recipe = {
-	{"xtraores_redo:titanium_bar","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
-	{"","","xtraores_redo:titanium_bar"},
-	{"","","xtraores_redo:titanium_bar"},
+	{"xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
+	{"","","xtraores_redo:tartarsium_bar"},
+	{"","","xtraores_redo:tartarsium_bar"},
 	}
 })
 
-minetest.register_craftitem('xtraores_redo:titanium_machinegun_mag', {
-		description = "".. core.colorize("#68fff6", "Titanium machinegun mag\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
-	inventory_image = "xtraores_redo_titanium_machinegun_mag.png",
+minetest.register_craftitem('xtraores_redo:tartarsium_machinegun_mag', {
+		description = "".. core.colorize("#68fff6", "Tartarsium machinegun mag\n")..core.colorize("#FFFFFF", "Material\n")..core.colorize("#FFFFFF", "Xtraores material level: 11"),
+	inventory_image = "xtraores_redo_tartarsium_machinegun_mag.png",
 	stack_max= 10,
 })
 
 minetest.register_craft({
-	output = "xtraores_redo:titanium_machinegun_mag",
+	output = "xtraores_redo:tartarsium_machinegun_mag",
 	recipe = {
-	{"","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
-	{"","xtraores_redo:titanium_bar","xtraores_redo:titanium_bar"},
-	{"","","xtraores_redo:titanium_bar"},
+	{"","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
+	{"","xtraores_redo:tartarsium_bar","xtraores_redo:tartarsium_bar"},
+	{"","","xtraores_redo:tartarsium_bar"},
 	}
 })
