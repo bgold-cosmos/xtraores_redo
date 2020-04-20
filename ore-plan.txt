@@ -1,3 +1,5 @@
+Note: The depths are a bit outdated
+
 nickel 100 lv1 ct2
 platinum -85 lv2 ct5
 Athenium -250 lv3 ct12
